@@ -1,0 +1,119 @@
+program 4
+
+Activity_main.java
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.WallpaperManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Button;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnChangeWallpaper;
+    boolean running;
+
+int height, width;
+
+    Bitmap bitmap, scaledBitmap;
+
+    int i = 0;
+    int[] imagesArray=new int[]
+            {
+            R.drawable.maruti,
+            R.drawable.tata,
+            R.drawable.hyundai,
+            R.drawable.honda,
+            R.drawable.audi,
+            R.drawable.bmw,
+            R.drawable.toyota,
+            R.drawable.renault
+            };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        height = metrics.heightPixels;
+        width = metrics.widthPixels;
+
+
+        btnChangeWallpaper = (Button)findViewById(R.id.btnChangeWallpaper);
+}
+
+    public void changeWallpaper(View view) {
+        if(!running)
+        {
+            new Timer().schedule (new MyTimer(),0,5000);
+            running=true;
+        }
+
+    }
+
+    class MyTimer extends TimerTask
+    {
+        public void run()
+        {
+            try
+            {
+                WallpaperManager wallpaperManager=
+                        WallpaperManager.getInstance(getBaseContext());
+
+                i++;
+                if ( i > imagesArray.length-1)
+                    i = 0;
+
+                bitmap = BitmapFactory.decodeStream(getResources().openRawResource(imagesArray[i]));
+                scaledBitmap = Bitmap.createScaledBitmap(bitmap, width, height, true);
+
+                wallpaperManager.setBitmap(scaledBitmap);
+                //   wallpaperManager.setBitmap (BitmapFactory.decodeResource(getResources()
+             //           ,imagesArray[i]));
+                i++;
+            }
+            catch(Exception e)
+{
+            }
+        }
+    }
+}
+
+Main_activity.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnChangeWallpaper"
+        android:layout_width="320dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="50dp"
+        android:text="Change Wallpaper"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:onClick="changeWallpaper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+Androidmanifest.xml
+
+<uses-permission android: name=”android permission.SET_WALLPAPER”/>
+
+
