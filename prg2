@@ -1,0 +1,399 @@
+main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="157dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="460dp"
+            android:text="C"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="352dp"
+            android:text="+"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="212dp"
+            android:layout_marginTop="352dp"
+            android:text="="
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnZero"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="344dp"
+            android:text="0"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnDot"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="344dp"
+            android:text="."
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnSub"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="252dp"
+            android:text="-"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnThree"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="244dp"
+            android:text="3"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnTwo"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="244dp"
+            android:text="2"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnOne"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="244dp"
+            android:text="1"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="148dp"
+            android:text="*"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnSix"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="144dp"
+            android:text="6"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnFive"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="144dp"
+            android:text="5"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnFour"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="144dp"
+            android:text="4"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="40dp"
+            android:text="/"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnNine"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="40dp"
+            android:text="9"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <Button
+            android:id="@+id/btnEight"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="40dp"
+            android:text="8"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="331dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="SIMPLE CALCULATOR"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="180dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Result"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/etDisplay"
+            android:layout_width="308dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:inputType="textPersonName"
+            android:text=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/btnSeven"
+            android:layout_width="65dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="7"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDisplay" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+
+activity_main.java
+package com.example.partaprogram2;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Button btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine;
+    private Button btnAdd, btnSub, btnMultiply, btnDivide;
+    private Button btnDot, btnEquals, btnCancel;
+
+    private EditText etDisplay;
+
+    private String firstNumber, secondNumber;
+    private String operation;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnZero = (Button)findViewById(R.id.btnZero);
+        btnOne = (Button)findViewById(R.id.btnOne);
+        btnTwo = (Button)findViewById(R.id.btnTwo);
+        btnThree = (Button)findViewById(R.id.btnThree);
+        btnFour = (Button)findViewById(R.id.btnFour);
+        btnFive = (Button)findViewById(R.id.btnFive);
+        btnSix = (Button)findViewById(R.id.btnSix);
+        btnSeven = (Button)findViewById(R.id.btnSeven);
+        btnEight = (Button)findViewById(R.id.btnEight);
+        btnNine = (Button)findViewById(R.id.btnNine);
+
+        btnAdd = (Button)findViewById(R.id.btnAdd);
+        btnSub = (Button)findViewById(R.id.btnSub);
+        btnMultiply = (Button)findViewById(R.id.btnMultiply);
+        btnDivide = (Button)findViewById(R.id.btnDivide);
+
+        btnDot = (Button)findViewById(R.id.btnDot);
+        btnEquals = (Button)findViewById(R.id.btnEquals);
+        btnCancel = (Button)findViewById(R.id.btnCancel);
+
+        etDisplay = (EditText)findViewById(R.id.etDisplay);
+
+        btnZero.setOnClickListener(this);
+        btnOne.setOnClickListener(this);
+        btnTwo.setOnClickListener(this);
+        btnThree.setOnClickListener(this);
+        btnFour.setOnClickListener(this);
+        btnFive.setOnClickListener(this);
+        btnSix.setOnClickListener(this);
+        btnSeven.setOnClickListener(this);
+        btnEight.setOnClickListener(this);
+        btnNine.setOnClickListener(this);
+
+        btnAdd.setOnClickListener(this);
+        btnSub.setOnClickListener(this);
+        btnMultiply.setOnClickListener(this);
+        btnDivide.setOnClickListener(this);
+
+        btnDot.setOnClickListener(this);
+        btnEquals.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if ( view.equals(btnZero)) etDisplay.append("0");
+        else if ( view.equals(btnOne)) etDisplay.append("1");
+        else if ( view.equals(btnTwo)) etDisplay.append("2");
+        else if ( view.equals(btnThree)) etDisplay.append("3");
+        else if ( view.equals(btnFour)) etDisplay.append("4");
+        else if ( view.equals(btnFive)) etDisplay.append("5");
+        else if ( view.equals(btnSix)) etDisplay.append("6");
+        else if ( view.equals(btnSeven)) etDisplay.append("7");
+        else if ( view.equals(btnEight)) etDisplay.append("8");
+        else if ( view.equals(btnNine)) etDisplay.append("9");
+
+        if ( view.equals(btnAdd)) {
+            operation = "+";
+            firstNumber = etDisplay.getText().toString();
+            etDisplay.setText("");
+        }
+        else if ( view.equals(btnSub)) {
+            operation = "-";
+            firstNumber = etDisplay.getText().toString();
+            etDisplay.setText("");
+        }
+        else if ( view.equals(btnMultiply)) {
+            operation = "x";
+            firstNumber = etDisplay.getText().toString();
+            etDisplay.setText("");
+        }
+        else if ( view.equals(btnDivide)) {
+            operation = "/";
+            firstNumber = etDisplay.getText().toString();
+            etDisplay.setText("");
+        }
+
+        if ( view.equals(btnEquals)) {
+            secondNumber = etDisplay.getText().toString();
+            double a = Double.parseDouble(firstNumber);
+            double b = Double.parseDouble(secondNumber);
+            double c = a + b;
+            Log.i("****** firstNumber = ",firstNumber);
+            Log.i("****** secondNumber = ",secondNumber);
+            etDisplay.setText(c+"");
+        }
+
+        if ( view.equals(btnDot)) etDisplay.append(".");
+
+        if ( view.equals(btnCancel)) etDisplay.setText("");
+    }
+}
