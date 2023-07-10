@@ -1,0 +1,388 @@
+PHONE
+
+main_activity.java
+
+package com.example.partaproblem8;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    Button btnDelete, btnCall, btnSave;
+    Button btnStar, btnHash;
+    Button btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive;
+    Button btnSix, btnSeven, btnEight, btnNine;
+
+    TextView tvDisplay;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnDelete = (Button)findViewById(R.id.btnDelete);
+        btnCall = (Button)findViewById(R.id.btnCall);
+        btnSave = (Button)findViewById(R.id.btnSave);
+
+        btnStar = (Button)findViewById(R.id.btnStar);
+        btnHash = (Button)findViewById(R.id.btnHash);
+
+        btnZero = (Button)findViewById(R.id.btnZero);
+        btnOne = (Button)findViewById(R.id.btnOne);
+        btnTwo = (Button)findViewById(R.id.btnTwo);
+        btnThree = (Button)findViewById(R.id.btnThree);
+        btnFour = (Button)findViewById(R.id.btnFour);
+        btnFive = (Button)findViewById(R.id.btnFive);
+        btnSix = (Button)findViewById(R.id.btnSix);
+        btnSeven = (Button)findViewById(R.id.btnSeven);
+        btnEight = (Button)findViewById(R.id.btnEight);
+        btnNine = (Button)findViewById(R.id.btnNine);
+
+        tvDisplay = (TextView)findViewById(R.id.tvDisplay);
+
+        btnDelete.setOnClickListener(this);
+        btnCall.setOnClickListener(this);
+        btnSave.setOnClickListener(this);
+
+        btnStar.setOnClickListener(this);
+        btnHash.setOnClickListener(this);
+
+        btnZero.setOnClickListener(this);
+        btnOne.setOnClickListener(this);
+        btnTwo.setOnClickListener(this);
+        btnThree.setOnClickListener(this);
+        btnFour.setOnClickListener(this);
+        btnFive.setOnClickListener(this);
+        btnSix.setOnClickListener(this);
+        btnSeven.setOnClickListener(this);
+        btnEight.setOnClickListener(this);
+        btnNine.setOnClickListener(this);
+
+        tvDisplay.setText("");
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        String data;
+        switch (view.getId())
+        {
+            case R.id.btnZero:
+                tvDisplay.append("0");
+                break;
+
+            case R.id.btnOne:
+                tvDisplay.append("1");
+                break;
+
+            case R.id.btnTwo:
+                tvDisplay.append("2");
+                break;
+
+            case R.id.btnThree:
+                tvDisplay.append("3");
+                break;
+
+            case R.id.btnFour:
+                tvDisplay.append("4");
+                break;
+
+            case R.id.btnFive:
+                tvDisplay.append("5");
+                break;
+
+            case R.id.btnSix:
+                tvDisplay.append("6");
+                break;
+
+            case R.id.btnSeven:
+                tvDisplay.append("7");
+                break;
+
+            case R.id.btnEight:
+                tvDisplay.append("8");
+                break;
+
+            case R.id.btnNine:
+                tvDisplay.append("9");
+                break;
+
+            case R.id.btnStar:
+                tvDisplay.append("*");
+                break;
+
+            case R.id.btnHash:
+                tvDisplay.append("#");
+                break;
+
+            case R.id.btnDelete:
+
+                data=tvDisplay.getText().toString();
+                if(data.length()>0)
+                {
+                    tvDisplay.setText
+                            (data.substring(0,data.length()-1));
+                }
+                else
+                {
+                    tvDisplay.setText("");
+                }
+                break;
+
+            case R.id.btnSave:
+                Intent contactIntent= new Intent
+                        (ContactsContract.Intents.Insert.ACTION);
+                contactIntent.setType
+                        (ContactsContract.RawContacts.CONTENT_TYPE);
+                contactIntent
+                        .putExtra(ContactsContract.Intents.Insert.NAME,"Unknown");
+                contactIntent.putExtra(ContactsContract.Intents.Insert.PHONE,
+                        tvDisplay.getText().toString());
+                startActivity(contactIntent);
+                break;
+
+            case R.id.btnCall:
+                data = tvDisplay.getText().toString();
+                Intent intent=new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+ data));
+                startActivity(intent);
+                break;
+        }
+    }
+}
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="110dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="444dp"
+        android:text="SAVE"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="127dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="444dp"
+        android:text="CALL"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnHash"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="344dp"
+        android:text="#"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnZero"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="344dp"
+        android:text="0"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnStar"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="336dp"
+        android:text="*"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnThree"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="256dp"
+        android:text="3"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnTwo"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="256dp"
+        android:text="2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnOne"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="256dp"
+        android:text="1"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnSix"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="160dp"
+        android:text="6"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnFive"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="160dp"
+        android:text="5"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnFour"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="160dp"
+        android:text="4"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnNine"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="64dp"
+        android:text="9"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnEight"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="64dp"
+        android:text="8"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="323dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Call and Save App"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="189dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="136dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="Delete"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnSeven"
+        android:layout_width="78dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="64dp"
+        android:text="7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
